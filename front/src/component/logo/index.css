@@ -1,0 +1,9 @@
+.logo-container {
+    display: flex; /* Используем Flexbox */
+    justify-content: center; /* Центрирование по горизонтали */
+    align-items: center; /* Центрирование по вертикали */
+}
+.logo-image {
+    height: 170px;
+    max-width: 100%; /* Не превышать ширину родительского контейнера */
+}
