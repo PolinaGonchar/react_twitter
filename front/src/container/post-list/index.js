@@ -1,4 +1,4 @@
-import { useState, Fragment } from "react";
+import { useState, Fragment, useEffect } from "react";
 
 import Title from "../../component/title";
 import Grid from "../../component/grid";
@@ -44,6 +44,15 @@ export default function Container() {
 
     isEmpty: raw.list.length === 0,
   });
+
+  useEffect(() => {
+    getData();
+
+    const intervalId = setInterval(() => getData(), 5000)
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, []);
 
   if (status === null) {
     getData();
